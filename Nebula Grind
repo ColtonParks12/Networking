@@ -40,6 +40,27 @@ FILE SEARCHING
 find / -name hint* 2> /dev/null
 find / -iname flag* 2> /dev/null
 
+SCP
+Download a file from a remote directory to a local directory
+  scp student@172.16.82.106:secretstuff.txt /home/student
+
+Upload a file to a remote directory from a local directory  
+  scp secretstuff.txt student@172.16.82.106:/home/student
+
+Copy a file from a remote host to a separate remote host
+  scp -3 student@172.16.82.106:/home/student/secretstuff.txt student@172.16.82.112:/home/student
+  password:    password:
+
+Recursive upload of a folder to remote
+  scp -r folder/ student@172.16.82.106:
+
+Recursive download of a folder from remote
+  scp -r student@172.16.82.106:folder/ .
+
+
+
+
+
 
 
 
