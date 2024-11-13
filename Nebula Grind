@@ -1,1 +1,45 @@
+https://osintframework.com/
+https://web.archive.org/
+
+
+PING SCAN
+ping 172.16.82.106 -c 1
+for i in {1..254}; do (ping -c 1 172.16.82.$i | grep "bytes from" &) ; done
+
+NMAP
+DEFALT SCANS
+  USER: TCP CONNECT -sT 
+  ROOT: TCP SYN SCAN -sS
+SCAN TYPES
+  SYN SCAN -sS
+  TCP CONNECT -sT
+  NULL SCAN -sN
+  FIN SCAN -sF
+  XMAS TREE -sX
+  UDP SCAN -sU
+  IDLE SCAN -sI
+NMAP OPTIONS
+  verbose -v
+  skip host discovery -Pn  
+  Ping Scan -sn
+  OS Detection -O  
+  Service Version -sV
+  Speed  -T4 (0-5)
+
+NETCAT
+HORIZONTAL SCAN for i in {1..254}; do nc -nvzw1 172.16.82.$i 20-23 80 2>&1 & done | grep -E 'succ|open
+
+
+CURL 
+  Used to interact with HTTP and HTTPS and FTP PROTOCOLS 
+  curl http://192.168.1.1
+WGET 
+  wget -r http://192.168.0.1
+
+FILE SEARCHING
+find / -name hint* 2> /dev/null
+find / -iname flag* 2> /dev/null
+
+
+
 
