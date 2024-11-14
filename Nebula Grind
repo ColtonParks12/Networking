@@ -1,6 +1,9 @@
 https://osintframework.com/
 https://web.archive.org/
 
+scans interfaces for listeing ports
+ss -nltp
+
 
 PING SCAN
 ping 172.16.82.106 -c 1
@@ -57,8 +60,9 @@ Recursive upload of a folder to remote
 Recursive download of a folder from remote
   scp -r student@172.16.82.106:folder/ .
 
-
-
+TUNNELING
+1st local Dynamic tunnel (from internethost to first box)
+  ssh user@<ip addr> -D 9050 -NT
 
 
 
