@@ -1,0 +1,3 @@
+#telnet into first box from telnet:
+(SSH-01) ssh student@10.50.32.69 -R 20401:localhost:22
+(IH) ssh net2_student4@localhost -p 20401 -L 20402:192.168.0.20:22
