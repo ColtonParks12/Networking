@@ -64,7 +64,24 @@ TUNNELING
 1st local Dynamic tunnel (from internethost to first box)
   ssh user@<ip addr> -D 9050 -NT
 
+OPENS A PORT ON (FIREWALL BLOCKING SSH INTO RICK, MUST USE REMOTE PORT FORWARD)
+(IH)   telnet 10.50.24.223
+(RICK) ssh student@10.50.20.69 -R 21001:localhost:22
+(IH)   ssh Rick@localhost -p 21001 -D 9050 -NT
+(IH)   ssh Rick@localhost -p 21001 -L 21002:10.1.2.18:2222
+(IH)   ssh Morty@localhost -p 21002 -D 9050 -NT
+(IH)   ssh Morty@localhost -p 21002 -L 21003:172.16.10.121:2323
+(IH)   ssh Jerry@localhost -p 21003 -D 9050 -NT
+(IH)   ssh Jerry@localhost -p 21003 -L 21004:192.168.10.69:22
+(IH)   ssh Beth@localhost -p 21004 -D 9050 -NT
 
-
-
-
+netN_comradeX:privetX (N=net number and X - student number)
+REMOTE PORT FORWARDING THROUGH MULTIPLE PIVOTS
+ssh student@10.50.20.69 -R 21001:localhost:22 -NT
+ssh net2_student10@localhost -p 21001 -L 21003:192.168.0.40:5555 -NT
+ssh net2_student10@localhost -p 21003 -L 21004:172.16.0.60:23 -NT
+ssh net2_student10@192.168.0.40 -p 5555 -R 21009:localhost:22 -NT
+ssh net2_student10@localhost -p 21003 -L 21008:localhost:21009
+ssh net2_comrade10@localhost -p 21008 -L 21010:172.16.0.90:2222
+ssh net2_comrade10@localhost -p 21010 -L 21012:172.16.0.100:23
+telnet localhost 21012
