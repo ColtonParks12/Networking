@@ -85,3 +85,13 @@ student@blue-internet-host-student-10:~$      ssh net2_student10@localhost -p 21
 student@blue-internet-host-student-10:~$      ssh net2_comrade10@localhost -p 21008 -L 21010:172.16.0.90:2222
 student@blue-internet-host-student-10:~$      ssh net2_comrade10@localhost -p 21010 -L 21012:172.16.0.100:23
 telnet localhost 21012
+
+Change traffic leaving to have a ttl of 128 pretending to be a windows device. 
+iptables -t mangle -A POSTROUTING -o eth0 -j TTL --ttl-set 128
+
+
+
+
+
+
+
