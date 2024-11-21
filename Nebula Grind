@@ -87,6 +87,6 @@ student@blue-internet-host-student-10:~$      ssh net2_comrade10@localhost -p 21
 telnet localhost 21012
 
 Change traffic leaving to have a ttl of 128 pretending to be a windows device. 
-iptables -t mangle -A POSTROUTING -o eth0 -j TTL --ttl-set 128
+iptables -t mangle -A POSTROUTING -o eth0 -j TTL --ttl-set 128                                                                CHANGE TO CISCO TTLLLLLLLLL
 
 tcpdump -n -r capstone-bpf.pcap "ip[6]&0x20=0x20||ip[6:2]&0x1fff>0" | wc -l  CREATES A BPF FOR FINDING FRAGMENTED PACKETS
