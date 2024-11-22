@@ -89,37 +89,12 @@ telnet localhost 21012
 Change traffic leaving to have a ttl of 128 pretending to be a windows device. 
 iptables -t mangle -A POSTROUTING -o eth0 -j TTL --ttl-set 128                                                   
 
-tcpdump -n -r capstone-bpf.pcap "ip[6]&0x20=0x20||ip[6:2]&0x1fff>0" | wc -l  CREATES A BPF FOR FINDING FRAGMENTED PACKETS
-
-
-
-Question 1:
-
-Using BPF’s, determine how many packets with a DSCP of 26 being sent to the host 10.0.0.103.
-
-Provide the number of packets converted to BASE64.
-
--------------------------------------------------------------------------------
-
-Question 2:
-
-What is the total number of fragmented packets?
-
-Provide the number of packets converted to BASE64.
-
--------------------------------------------------------------------------------
-
-Question 3:
-
+Using BPF's find all fragmented packets
+  tcpdump -n -r capstone-bpf.pcap "ip[6]&0x20=0x20||ip[6:2]&0x1fff>0" | wc -l 
+Using BPF’s, determine how many packets with a DSCP of 26 being sent to the host 10.0.0.103 
+  tcpdump -n -r capstone-bpf.pcap "ip[1]>>2=26&&ip[16:4]=0xa000067" | wc -l
 How many packets have the DF flag set and has ONLY the RST and FIN TCP Flags set?
-
-Provide the number of packets converted to BASE64.
-
--------------------------------------------------------------------------------
-
-Question 4:
-
+   tcpdump -n -r capstone-bpf.pcap "ip[6]&64=64&&tcp[13]=5" | wc -l
 An attacker is targeting the host 10.0.0.104 with either a TCP full or half open scan. Based off the pcap, how many ports are open?
-
-Provide the number of ports converted to BASE64.
+  tcpdump -n -r capstone-bpf.pcap "ip[12:4]=0x0a000068 && tcp[13]=18" | wc -l
 
