@@ -93,71 +93,33 @@ tcpdump -n -r capstone-bpf.pcap "ip[6]&0x20=0x20||ip[6:2]&0x1fff>0" | wc -l  CRE
 
 
 
-192.168.10.111
-
 Question 1:
 
-How many rule files are on the system?
+Using BPF’s, determine how many packets with a DSCP of 26 being sent to the host 10.0.0.103.
 
-Provide the number converted to Base64 as your answer.
+Provide the number of packets converted to BASE64.
 
 -------------------------------------------------------------------------------
 
 Question 2:
 
-How many of the rules are currently in use to match on traffic?
+What is the total number of fragmented packets?
 
-Provide the number converted to Base64 as your answer.
+Provide the number of packets converted to BASE64.
 
 -------------------------------------------------------------------------------
 
 Question 3:
 
-Which rule will look for someone doing a null scan ?
+How many packets have the DF flag set and has ONLY the RST and FIN TCP Flags set?
 
-Provide only the filename as your answer (i.e. ‘file.rules’) and converted to Base64.
+Provide the number of packets converted to BASE64.
 
 -------------------------------------------------------------------------------
 
 Question 4:
 
-What is the exact Alert Message that is being triggered on the system?
+An attacker is targeting the host 10.0.0.104 with either a TCP full or half open scan. Based off the pcap, how many ports are open?
 
-Convert the exact message as you see it and convert it to Base64 for your answer.
-
----------------------------------------------------------------
-
-Question 5:
-
-From what IP is the attack coming from?
-
-Provide your answer in the x.x.x.x format and converted to Base64.
-
-
-
-
-  <h2>Question 1</h2>
-
-  <p>Which option in Wireshark could you use if you wanted to identify which IP address are communicating with each other?</p>
-  <p>Specify your answer in ALL CAPS and converted to Base64.</p>
-
-<h2>Question 2</h2>
-  <p>What is the name of the data type that is a Cisco proprietary protocol used for collecting IP traffic information and monitoring network flow? </p>
-  <p>Specify your answer in ALL CAPS and converted to Base64.</p>
-
-  <h2>Question 3</h2>
- <p>A method of data collection where this device can be placed in line on the wire to capture traffic?</p>
-  <p>What is this device called?</p>
-  <p>Specify your one word answer in ALL CAPS and converted to Base64.</p>
-
-  <h2>Question 4</h2>
-  <p>A network admin starts to notice an increase in requests for certain files, changes to the registry and unusual tasks being run.</p>
-  <p>This anomaly is an Indicator of ________?</p>
-  <p>Specify your 1 word answer in ALL CAPS and converted to Base64.</p>
-
-  <h2>Question 5</h2>
-  <p>What type of malware doesn't use an encryption key but is capable of rewriting its code and signature patterns with each iteration?</p>
-  <br>
-  <p>Specify your 1 word answer in ALL CAPS and converted to Base64.</p>
-
+Provide the number of ports converted to BASE64.
 
