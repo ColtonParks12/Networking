@@ -97,4 +97,4 @@ How many packets have the DF flag set and has ONLY the RST and FIN TCP Flags set
    tcpdump -n -r capstone-bpf.pcap "ip[6]&64=64&&tcp[13]=5" | wc -l
 An attacker is targeting the host 10.0.0.104 with either a TCP full or half open scan. Based off the pcap, how many ports are open?
   tcpdump -n -r capstone-bpf.pcap "ip[12:4]=0x0a000068 && tcp[13]=18" | wc -l
-
+Hacker',cock',cock',1) # \
